@@ -1,4 +1,6 @@
 :root {
   --c-black: #222639;
   --c-white: #f0f5fa;
+  --color-base-purple: 269, 79%;
+  --purple-glow-highlight: hsla(var(--color-base-purple), 50%, 1);
 }

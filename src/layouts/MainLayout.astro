@@ -4,6 +4,10 @@
 const { title } = Astro.props;
 import "../styles/reset.css";
 import "../styles/variables.css";
+import "../styles/global.css";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <style>
@@ -12,7 +16,7 @@ import "../styles/variables.css";
     font-family: "Anonymous Pro", monospace;
     background-color: var(--c-black);
     color: var(--c-white);
-    grid-template-columns: 1fr 400px 1fr;
+    grid-template-columns: 1fr 440px 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -42,23 +46,27 @@ import "../styles/variables.css";
   a {
     color: rgb(187, 153, 255);
     text-decoration: none;
-    text-transform: lowercase;
+    transition: all 0.3s ease-in;
   }
 
-  a:active {
-    color: yellow;
+  a.active {
+    color: white;
+    font-size: 20px;
   }
+
   hr {
     width: 100%;
-  }
-
-  .title {
   }
 
   .content {
     display: grid;
     margin: 20px;
     grid-template-rows: 100px 1fr 200px;
+  }
+
+  .links {
+    display: flex;
+    gap: 32px;
   }
 
   .content {
@@ -79,24 +87,30 @@ import "../styles/variables.css";
         <div class="name">David Sanderson</div>
         <hr />
         <div class="title">Software Engineer</div>
-        <div>
-          <a href="/">About</a>
-          <a href="/projects">Projects</a>
-          <a href="/resume">Resume</a>
+        <div class="links">
+          <a class={currentPath === "" ? "active" : ""} href="/">about</a>
+          <a class={currentPath === "projects" ? "active" : ""} href="/projects"
+            >projects</a
+          >
+          <a class={currentPath === "resume" ? "active" : ""} href="/resume"
+            >resume</a
+          >
         </div>
       </nav>
       <main>
-          <slot />
-          <!-- your content is injected here -->
+        <slot />
+        <!-- your content is injected here -->
       </main>
       <footer>
         <div>
-          © {new Date().getFullYear()}, Built with Astro, Netlify, and plain ol'
-          css.
+          © {new Date().getFullYear()}, Built with <a
+            target="_blank"
+            href="https://docs.astro.build/en/getting-started/">Astro</a
+          >, <a target="_blank" href="https://vercel.com">Vercel</a>, and plain
+          ol' css.
         </div>
-        <div>Developed with 💖 by @_dsanderson</div>
+        <div>Developed with 💖 by <a href="">@_dsanderson</a></div>
       </footer>
-      <!-- <Footer /> -->
     </div>
   </body>
 </html>
