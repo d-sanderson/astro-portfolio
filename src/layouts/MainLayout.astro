@@ -2,7 +2,47 @@
 // import BaseHead from '../components/BaseHead.astro';
 // import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
+import '../styles/reset.css';
 ---
+
+<style>
+  :root {
+    --background-color: #222639;
+    --text-primary: #f0f5fa;
+  }
+  body {
+    display: grid;
+    font-family: "Anonymous Pro", monospace;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h4 {
+    padding-top: 10px;
+    border-top: 2px solid var(--text-primary);
+  }
+
+
+  a {
+    color: rgb(187, 153, 255);
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  .content {
+    grid-column-start: 2;
+  }
+</style>
 
 <html lang="en">
   <head>
@@ -12,20 +52,26 @@ const { title } = Astro.props;
     <!-- <BaseHead title={title}/> -->
   </head>
   <body>
-    <nav>
-      <a href="/">About</a>
-      <a href="/projects">Projects</a>
-      <a href="/resume">Resume</a>
-    </nav>
-    <h1>{title}</h1>
-    <main>
-      <slot />
-      <!-- your content is injected here -->
-    </main>
-    <footer>
-      <div>© 2023, Built with Astro, Netlify, an plain ol css.</div>
-      <div>Developed with 💖 by @_dsanderson</div>
-    </footer>
-    <!-- <Footer /> -->
+    <div class="content">
+      <nav>
+        <h1>David Sanderson</h1>
+        <h4>Software Engineer</h4>
+        <div>
+          <a href="/">About</a>
+          <a href="/projects">Projects</a>
+          <a href="/resume">Resume</a>
+        </div>
+      </nav>
+      <h1>{title}</h1>
+      <main>
+        <slot />
+        <!-- your content is injected here -->
+      </main>
+      <footer>
+        <div>© 2023, Built with Astro, Netlify, an plain ol css.</div>
+        <div>Developed with 💖 by @_dsanderson</div>
+      </footer>
+      <!-- <Footer /> -->
+    </div>
   </body>
 </html>
