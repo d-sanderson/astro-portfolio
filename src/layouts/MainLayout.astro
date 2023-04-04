@@ -2,8 +2,8 @@
 // import BaseHead from '../components/BaseHead.astro';
 // import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
-import '../styles/reset.css';
-import '../styles/variables.css';
+import "../styles/reset.css";
+import "../styles/variables.css";
 ---
 
 <style>
@@ -26,7 +26,8 @@ import '../styles/variables.css';
     gap: 10px;
   }
 
-  main, footer {
+  main,
+  footer {
     margin-top: 20px;
   }
 
@@ -54,13 +55,11 @@ import '../styles/variables.css';
   .title {
   }
 
-  
   .content {
     display: grid;
     margin: 20px;
     grid-template-rows: 100px 1fr 200px;
   }
-
 
   .content {
     grid-column-start: 2;
@@ -87,11 +86,14 @@ import '../styles/variables.css';
         </div>
       </nav>
       <main>
-        <slot />
-        <!-- your content is injected here -->
+          <slot />
+          <!-- your content is injected here -->
       </main>
       <footer>
-        <div>© {new Date().getFullYear()}, Built with Astro, Netlify, and plain ol' css.</div>
+        <div>
+          © {new Date().getFullYear()}, Built with Astro, Netlify, and plain ol'
+          css.
+        </div>
         <div>Developed with 💖 by @_dsanderson</div>
       </footer>
       <!-- <Footer /> -->
