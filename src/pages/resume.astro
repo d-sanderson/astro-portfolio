@@ -2,6 +2,25 @@
 import Layout from '../layouts/MainLayout.astro';
 ---
 
-<Layout>
-  <h1>Resume Here</h1>
+<style>
+  div {
+    display: flex;
+  }
+  a {
+    color: var(--c-black);
+    background-color: var(--c-white);
+    padding: 1em 1.5em;
+    margin: 40px auto;
+    /* position: relative; */
+    display: inline-block;
+    text-decoration: none;
+    border: 3px solid;
+    text-transform: uppercase;
+    transition: all 0.25s ease-out 0s;
+  }
+</style>
+<Layout title="David Sanderson | Resume">
+  <div>
+    <a href="../../public/david-sanderson-resume-01-12-22.pdf">Resume</a>
+  </div>
 </Layout>

@@ -1,7 +1,13 @@
 ---
-import Layout from '../layouts/MainLayout.astro';
+import Layout from "../layouts/MainLayout.astro";
+import { projectsData as projects } from "../data/projects";
 ---
 
-<Layout>
-  <h1>Projects Here </h1>
+<Layout title="David Sanderson | Projects">
+  <h1>Projects</h1>
+  {
+    projects.map((el) => (
+      <div class="card">{el.title}</div>
+    ))
+  }
 </Layout>

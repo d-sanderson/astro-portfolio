@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/anonymous-pro": "^4.5.9",
-    "astro": "^2.1.9"
+    "astro": "^2.1.9",
+    "uuid": "^9.0.0"
   }
 }

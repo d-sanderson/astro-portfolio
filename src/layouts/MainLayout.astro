@@ -3,42 +3,65 @@
 // import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
 import '../styles/reset.css';
+import '../styles/variables.css';
 ---
 
 <style>
-  :root {
-    --background-color: #222639;
-    --text-primary: #f0f5fa;
-  }
   body {
     display: grid;
     font-family: "Anonymous Pro", monospace;
-    background-color: var(--background-color);
-    color: var(--text-primary);
-    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--c-black);
+    color: var(--c-white);
+    grid-template-columns: 1fr 400px 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
 
   nav {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
-  h4 {
-    padding-top: 10px;
-    border-top: 2px solid var(--text-primary);
+  main, footer {
+    margin-top: 20px;
   }
 
+  main {
+    align-self: flex-start;
+  }
 
+  footer {
+    font-size: 12px;
+    align-self: end;
+  }
   a {
     color: rgb(187, 153, 255);
     text-decoration: none;
     text-transform: lowercase;
   }
+
+  a:active {
+    color: yellow;
+  }
+  hr {
+    width: 100%;
+  }
+
+  .title {
+  }
+
+  
+  .content {
+    display: grid;
+    margin: 20px;
+    grid-template-rows: 100px 1fr 200px;
+  }
+
+
   .content {
     grid-column-start: 2;
   }
@@ -49,26 +72,26 @@ import '../styles/reset.css';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- TODO: SEO -->
-    <!-- <BaseHead title={title}/> -->
+    <title>{title}</title>
   </head>
   <body>
     <div class="content">
       <nav>
-        <h1>David Sanderson</h1>
-        <h4>Software Engineer</h4>
+        <div class="name">David Sanderson</div>
+        <hr />
+        <div class="title">Software Engineer</div>
         <div>
           <a href="/">About</a>
           <a href="/projects">Projects</a>
           <a href="/resume">Resume</a>
         </div>
       </nav>
-      <h1>{title}</h1>
       <main>
         <slot />
         <!-- your content is injected here -->
       </main>
       <footer>
-        <div>© 2023, Built with Astro, Netlify, an plain ol css.</div>
+        <div>© {new Date().getFullYear()}, Built with Astro, Netlify, and plain ol' css.</div>
         <div>Developed with 💖 by @_dsanderson</div>
       </footer>
       <!-- <Footer /> -->
