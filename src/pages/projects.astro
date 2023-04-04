@@ -3,11 +3,48 @@ import Layout from "../layouts/MainLayout.astro";
 import { projectsData as projects } from "../data/projects";
 ---
 
+<style>
+  h1 {
+    text-align: center;
+    text-transform: lowercase;
+  }
+  .card {
+    margin: 20px 0;
+    padding: 1em 1.5em;
+    border: 1px solid var(--c-white);
+  }
+
+  .tags {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .tag {
+    padding: 4px;
+    font-size: 10px;
+    border: 1px solid var(--c-white);
+  }
+
+  .project-title {
+    text-transform: capitalize;
+  }
+</style>
 <Layout title="David Sanderson | Projects">
   <h1>Projects</h1>
   {
     projects.map((el) => (
-      <div class="card">{el.title}</div>
+      <div class="card">
+        <h2 class="project-title">{el.title}</h2>
+        {el.tags && (
+          <div class="tags">
+            {el.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+        {el.description && <p>{el.description}</p>}
+      </div>
     ))
   }
 </Layout>
