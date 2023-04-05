@@ -6,12 +6,17 @@ import { projectsData as projects } from "../data/projects";
 <style>
   h1 {
     text-align: center;
-    text-transform: lowercase;
   }
+  .container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .card {
-    margin: 20px 0;
     padding: 1em 1.5em;
-    border: 1px solid var(--c-white);
+    border: 2px solid var(--c-white);
   }
 
   .tags {
@@ -37,7 +42,7 @@ import { projectsData as projects } from "../data/projects";
 </style>
 
 <Layout title="David Sanderson | Projects">
-  <h1>Projects</h1>
+  <div class="container">
   {projects.map((el) => (
       <div class="card">
         <h2 class="project-title">{el.title}</h2>
@@ -48,6 +53,7 @@ import { projectsData as projects } from "../data/projects";
             ))}
           </div>
         )}
+        
         {el.description && <p>{el.description}</p>}
         <div class="links">
           {el.repo && <a href={el.repo}>View source</a>}
@@ -55,4 +61,5 @@ import { projectsData as projects } from "../data/projects";
         </div>
       </div>
     ))}
+     </div>
 </Layout>
