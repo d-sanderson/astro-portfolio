@@ -31,12 +31,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
     gap: 10px;
   }
 
-  main,
-  footer {
-    margin-top: 20px;
-  }
 
   main {
+    margin-top: 40px;
     align-self: flex-start;
   }
 
@@ -50,9 +47,17 @@ const currentPath = pathname.slice(1); // remove the first "/"
     width: 100%;
   }
 
+  .name {
+    font-size: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+
   .content {
     display: grid;
-    margin: 40px 20px 20px;
+    margin: 80px 20px 20px;
     grid-template-rows: 100px 1fr 200px;
   }
 

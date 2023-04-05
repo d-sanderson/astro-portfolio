@@ -11,4 +11,5 @@ a {
 a.active {
   color: white;
   transform: scale(1.25);
+  text-decoration: underline;
 }
