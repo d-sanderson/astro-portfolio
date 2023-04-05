@@ -1,4 +1,14 @@
 a {
-  color: rgb(187, 153, 255);
+  color: var(--link-purple);
   text-decoration: none;
+}
+
+a {
+  color: rgb(187, 153, 255);
+  transition: all 0.3s ease-in;
+}
+
+a.active {
+  color: white;
+  transform: scale(1.25);
 }

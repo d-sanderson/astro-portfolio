@@ -4,23 +4,64 @@ import Layout from "../layouts/MainLayout.astro";
 
 <style>
   .container {
-    display: flex;
+    position: relative;
   }
   .resume-btn {
-    color: var(--c-black);
-    background-color: var(--c-white);
+    position: absolute;
+    background-color: var(--purple-glow-highlight);
+    color: var(--c-white);
+    font-weight: bold;
+    top: 40px;
+    left: 34%;
     padding: 1em 1.5em;
-    margin: 40px auto;
     display: inline-block;
     text-decoration: none;
-    border: 3px solid;
+    text-align: center;
+    border: 3px solid var(--purple-glow-highlight);
     text-transform: uppercase;
     transition: all 0.25s ease-out 0s;
+    border-radius: 10px;
   }
+
+  i {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+  width: 15%;
+  height: 100%;
+  transform: skew(-10deg, 0deg);
+  /*  animating it  */
+  animation: move 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+/*  */
+@keyframes move {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.0;
+  }
+  48% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.0;
+  }
+  100% {
+    left: 82%;
+  }
+}
+
 </style>
 
 <Layout title="David Sanderson | Resume">
   <div class="container">
-    <a class="resume-btn" href="../../public/david-sanderson-resume-01-12-22.pdf">Resume</a>
+    <a class="resume-btn" href="../../public/david-sanderson-resume-01-12-22.pdf">Resume  <i /></a>
   </div>
 </Layout>

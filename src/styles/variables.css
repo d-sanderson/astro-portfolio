@@ -3,4 +3,5 @@
   --c-white: #f0f5fa;
   --color-base-purple: 269, 79%;
   --purple-glow-highlight: hsla(var(--color-base-purple), 50%, 1);
+  --link-purple: rgb(187, 153, 255);
 }

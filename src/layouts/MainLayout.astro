@@ -5,6 +5,7 @@ const { title } = Astro.props;
 import "../styles/reset.css";
 import "../styles/variables.css";
 import "../styles/global.css";
+import Nav from "../components/Nav.tsx"
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
@@ -43,16 +44,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
     font-size: 12px;
     align-self: end;
   }
-  a {
-    color: rgb(187, 153, 255);
-    text-decoration: none;
-    transition: all 0.3s ease-in;
-  }
 
-  a.active {
-    color: white;
-    font-size: 20px;
-  }
 
   hr {
     width: 100%;
@@ -88,13 +80,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
         <hr />
         <div class="title">Software Engineer</div>
         <div class="links">
-          <a class={currentPath === "" ? "active" : ""} href="/">about</a>
-          <a class={currentPath === "projects" ? "active" : ""} href="/projects"
-            >projects</a
-          >
-          <a class={currentPath === "resume" ? "active" : ""} href="/resume"
-            >resume</a
-          >
+          <Nav client:load />
         </div>
       </nav>
       <main>
