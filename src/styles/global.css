@@ -1,3 +1,4 @@
+
 a {
   color: var(--link-purple);
   text-decoration: none;
@@ -6,6 +7,10 @@ a {
 a {
   color: rgb(187, 153, 255);
   transition: all 0.3s ease-in;
+}
+
+a:hover {
+  color: paleturquoise;
 }
 
 a.active {
