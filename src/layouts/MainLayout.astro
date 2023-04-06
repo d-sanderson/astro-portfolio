@@ -6,7 +6,8 @@ import "../styles/reset.css";
 import "../styles/variables.css";
 import "../styles/global.css";
 import Nav from "../components/Nav";
-
+import github from "../../public/github-mark.svg"
+import linkedIn from "../../public/linked-in.svg"
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -108,10 +109,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
     justify-content: flex-start;
   }
 
-  img {
+  .logo {
     height: 25px;
     width: 25px;
   }
+
 </style>
 
 <html lang="en">
@@ -150,10 +152,10 @@ const currentPath = pathname.slice(1); // remove the first "/"
         </div>
         <div class="socials">
           <a href="https://github.com/d-sanderson" target="_blank">
-            <img class="github" src="../../public/github-mark.svg" alt="Github" />
+            <img class="logo" src={github} alt="Github" />
           </a>
           <a href="https://www.linkedin.com/in/d-sanderson/" target="_blank">
-          <img class="github" src="../../public/linked-in.svg" alt="LinkedIn" />
+          <img class="logo" src={linkedIn} alt="LinkedIn" />
           </a>
         </div>
       </footer>
