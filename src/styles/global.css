@@ -13,8 +13,12 @@ a:hover {
   color: paleturquoise;
 }
 
-a.active {
+.dark-mode a.active {
   color: white;
+}
+
+a.active {
+  color: black;
   transform: scale(1.25);
   text-decoration: underline;
 }

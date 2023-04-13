@@ -9,23 +9,30 @@ import Nav from "../components/Nav";
 import github from "/github-mark.svg"
 import linkedIn from "/linked-in.svg"
 import Stars from "../components/Stars/Stars";
+import Switch from "../components/Switch/Switch";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <style>
-
-  
+ 
   body {
     display: grid;
     font-family: "Anonymous Pro", monospace;
-    background-color: var(--c-black);
-    color: var(--c-white);
+    background-color: var(--c-white);
+    color: var(--c-black);
     grid-template-columns: 1fr 440px 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
+
+  .dark-mode {
+    background-color: var(--c-black);
+    color: var(--c-white);
+  }
+
+
 
   nav {
     width: 100%;
@@ -36,7 +43,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
   }
 
   main {
-    margin-top: 40px;
+    margin-top: 5rem;
     align-self: flex-start;
   }
 
@@ -92,10 +99,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <!-- TODO: SEO -->
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark-mode">
     <Stars currentPath={currentPath} client:load />
     <div class="content">
       <nav>
+        <!-- <Switch handleClick={() => null } client:load /> -->
         <div class="name">David Sanderson</div>
         <hr />
         <div class="title">Software Engineer</div>
