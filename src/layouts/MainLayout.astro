@@ -15,17 +15,27 @@ const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <style>
- 
   body {
     display: grid;
     font-family: "Anonymous Pro", monospace;
     background-color: var(--c-white);
     color: var(--c-black);
-    grid-template-columns: 1fr 440px 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
+
+@media (min-width: 577px) {
+  body { 
+    grid-template-columns: 1fr 480px 1fr;
+  }
+  .content {
+      grid-column-start: 2;
+    }
+  }
+ 
+
 
   .dark-mode {
     background-color: var(--c-black);
@@ -65,8 +75,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
   .content {
     display: grid;
-    margin: 80px 20px 20px;
+    margin: 80px 30px 20px;
     grid-template-rows: 100px 1fr 200px;
+    grid-column-start: 1;
   }
 
   .links {
@@ -74,8 +85,10 @@ const currentPath = pathname.slice(1); // remove the first "/"
     gap: 32px;
   }
 
+  @media (min-width: 577px) {
   .content {
-    grid-column-start: 2;
+      grid-column-start: 2;
+    }
   }
 
   .socials {
@@ -103,7 +116,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <Stars currentPath={currentPath} client:load />
     <div class="content">
       <nav>
-        <!-- <Switch handleClick={() => null } client:load /> -->
+        <Switch handleClick={() => null } client:load />
         <div class="name">David Sanderson</div>
         <hr />
         <div class="title">Software Engineer</div>
