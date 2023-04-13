@@ -2,6 +2,7 @@ import { createMachine } from 'xstate';
 import './Stars.css'
 import classNames from 'classnames';
 import { useMachine } from '@xstate/react';
+
 const Stars = () => {
   const starMachine = createMachine({
     id: 'toggle',
@@ -10,18 +11,22 @@ const Stars = () => {
       inactive: {
         after: {
           300: {
-            target: 'active'
+            target: 'active',
+            cond: 'hasLoaded',
+            actions: ['setHasLoaded']
           }
         }
       },
       active: {
         on: { TOGGLE: 'inactive' }
       }
-    }
-  });
-
+    },
+  }, { actions: {
+    setHasLoaded: () => localStorage.setItem('load', 'true')
+  },guards: {
+    hasLoaded: () => localStorage.getItem('load') === 'true'
+  }});
   const [state, send] = useMachine(starMachine)
-  
   return (
     <div className="bg-stars-animated">
       <svg className={classNames("starContainer",{"starInner--animated": state.matches('active')})}><svg className="star " x="80%" y="15%">
