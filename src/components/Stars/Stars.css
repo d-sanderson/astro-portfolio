@@ -1,0 +1,147 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-stars-animated {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.starContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 635px;
+}
+
+.starInner {
+  opacity: 0;
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transform: scale(0) translate(0, -100px);
+  -ms-transform: scale(0) translate(0, -100px);
+  transform: scale(0) translate(0, -100px);
+}
+.starInner--animated .starInner {
+  opacity: 1;
+  -webkit-transform: scale(1) translate(0, 0);
+  -ms-transform: scale(1) translate(0, 0);
+  transform: scale(1) translate(0, 0);
+}
+.starInner--animated .star:nth-of-type(1) .starInner {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+.starInner--animated .star:nth-of-type(2) .starInner {
+  -webkit-transition-delay: 0.275s;
+  transition-delay: 0.275s;
+}
+.starInner--animated .star:nth-of-type(3) .starInner {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.starInner--animated .star:nth-of-type(4) .starInner {
+  -webkit-transition-delay: 0.325s;
+  transition-delay: 0.325s;
+}
+.starInner--animated .star:nth-of-type(5) .starInner {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+.starInner--animated .star:nth-of-type(6) .starInner {
+  -webkit-transition-delay: 0.375s;
+  transition-delay: 0.375s;
+}
+.starInner--animated .star:nth-of-type(7) .starInner {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.starInner--animated .star:nth-of-type(8) .starInner {
+  -webkit-transition-delay: 0.42500000000000004s;
+  transition-delay: 0.42500000000000004s;
+}
+.starInner--animated .star:nth-of-type(9) .starInner {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+.starInner--animated .star:nth-of-type(10) .starInner {
+  -webkit-transition-delay: 0.475s;
+  transition-delay: 0.475s;
+}
+.starInner--animated .star:nth-of-type(11) .starInner {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.starInner--animated .star:nth-of-type(12) .starInner {
+  -webkit-transition-delay: 0.525s;
+  transition-delay: 0.525s;
+}
+.starInner--animated .star:nth-of-type(13) .starInner {
+  -webkit-transition-delay: 0.55s;
+  transition-delay: 0.55s;
+}
+.starInner--animated .star:nth-of-type(14) .starInner {
+  -webkit-transition-delay: 0.575s;
+  transition-delay: 0.575s;
+}
+.starInner--animated .star:nth-of-type(15) .starInner {
+  -webkit-transition-delay: 0.6000000000000001s;
+  transition-delay: 0.6000000000000001s;
+}
+.starInner--animated .star:nth-of-type(16) .starInner {
+  -webkit-transition-delay: 0.625s;
+  transition-delay: 0.625s;
+}
+.starInner--animated .star:nth-of-type(17) .starInner {
+  -webkit-transition-delay: 0.65s;
+  transition-delay: 0.65s;
+}
+.starInner--animated .star:nth-of-type(18) .starInner {
+  -webkit-transition-delay: 0.675s;
+  transition-delay: 0.675s;
+}
+.starInner--animated .star:nth-of-type(19) .starInner {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+.starInner--animated .star:nth-of-type(20) .starInner {
+  -webkit-transition-delay: 0.7250000000000001s;
+  transition-delay: 0.7250000000000001s;
+}
+.starInner--animated .star:nth-of-type(21) .starInner {
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+.starInner--animated .star:nth-of-type(22) .starInner {
+  -webkit-transition-delay: 0.775s;
+  transition-delay: 0.775s;
+}
+.starInner--animated .star:nth-of-type(23) .starInner {
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+.starInner--animated .star:nth-of-type(24) .starInner {
+  -webkit-transition-delay: 0.8250000000000001s;
+  transition-delay: 0.8250000000000001s;
+}
+.starInner--animated .star:nth-of-type(25) .starInner {
+  -webkit-transition-delay: 0.8500000000000001s;
+  transition-delay: 0.8500000000000001s;
+}
+.starInner--animated .star:nth-of-type(26) .starInner {
+  -webkit-transition-delay: 0.875s;
+  transition-delay: 0.875s;
+}
