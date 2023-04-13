@@ -30,7 +30,6 @@ const Stars = ({ currentPath }: Props) => {
   const [state, send] = useMachine(starMachine)
   return (
     <div className={classNames("bg-stars-animated")}>
-      currentPath: {currentPath}
       <svg className={classNames("starContainer", {"starInner--animated": state.matches('active') || currentPath !== '' })}><svg className="star " x="80%" y="15%">
         <g className="starContent" transform="scale(0.5)">
           <g className="starInner">
