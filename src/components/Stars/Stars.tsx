@@ -3,7 +3,12 @@ import './Stars.css'
 import classNames from 'classnames';
 import { useMachine } from '@xstate/react';
 
-const Stars = () => {
+
+interface Props {
+  currentPath: string
+}
+
+const Stars = ({ currentPath }: Props) => {
   const starMachine = createMachine({
     id: 'toggle',
     initial: 'inactive',
@@ -12,8 +17,6 @@ const Stars = () => {
         after: {
           300: {
             target: 'active',
-            cond: 'hasLoaded',
-            actions: ['setHasLoaded']
           }
         }
       },
@@ -21,15 +24,15 @@ const Stars = () => {
         on: { TOGGLE: 'inactive' }
       }
     },
-  }, { actions: {
-    setHasLoaded: () => localStorage.setItem('load', 'true')
-  },guards: {
-    hasLoaded: () => localStorage.getItem('load') === 'true'
-  }});
+  });
+  
+  console.log(currentPath)
   const [state, send] = useMachine(starMachine)
   return (
     <div className="bg-stars-animated">
-      <svg className={classNames("starContainer",{"starInner--animated": state.matches('active')})}><svg className="star " x="80%" y="15%">
+      {state.toStrings()}
+      currentPath: {currentPath}
+      <svg className={classNames("starContainer", {"starInner--animated": state.matches('active') || currentPath !== '' })}><svg className="star " x="80%" y="15%">
         <g className="starContent" transform="scale(0.5)">
           <g className="starInner">
             <path fill="#8a4baf" fill-rule="evenodd" className="starBackground css-1rxdz5j" d="M13.136,5.728 C11.5573333,5.728 10.272,4.44266667 10.272,2.864 C10.272,1.29066667 9.248,0 8,0 C6.752,0 5.728,1.29066667 5.728,2.864 C5.728,4.44266667 4.44266667,5.728 2.864,5.728 C1.29066667,5.728 0,6.752 0,8 C0,9.248 1.29066667,10.272 2.864,10.272 C4.44266667,10.272 5.728,11.5573333 5.728,13.136 C5.728,14.7093333 6.752,16 8,16 C9.248,16 10.272,14.7093333 10.272,13.136 C10.272,11.5573333 11.5573333,10.272 13.136,10.272 C14.7093333,10.272 16,9.248 16,8 C16,6.752 14.7093333,5.728 13.136,5.728 Z"></path>

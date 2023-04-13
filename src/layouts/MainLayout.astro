@@ -93,7 +93,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <title>{title}</title>
   </head>
   <body>
-    <Stars client:visible />
+    <Stars currentPath={currentPath} client:load />
     <div class="content">
       <nav>
         <div class="name">David Sanderson</div>
