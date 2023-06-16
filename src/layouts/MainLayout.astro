@@ -10,6 +10,7 @@ import github from "/github-mark.svg"
 import linkedIn from "/linked-in.svg"
 import Stars from "../components/Stars/Stars";
 import Switch from "../components/Switch/Switch";
+import RegisterHit from "../components/RegisterHit";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -114,6 +115,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
   </head>
   <body class="dark-mode">
     <Stars currentPath={currentPath} client:load />
+    <RegisterHit client:load />
     <div class="content">
       <nav>
         <Switch handleClick={() => null } client:load />

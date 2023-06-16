@@ -18,6 +18,7 @@
     "@xstate/react": "^3.2.1",
     "astro": "^2.1.9",
     "classnames": "^2.3.2",
+    "countapi-js": "^1.0.2",
     "nanostores": "^0.7.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,6 +26,7 @@
     "xstate": "^4.37.1"
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.1"
+    "@types/uuid": "^9.0.1",
+    "yargs": "^17.7.2"
   }
 }

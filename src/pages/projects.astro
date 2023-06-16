@@ -16,6 +16,11 @@ import { projectsData as projects } from "../data/projects";
 
   .card {
     padding: 1em 1.5em;
+    border: 2px solid var(--c-black);
+  }
+
+  :global(.dark-mode) .card {
+    padding: 1em 1.5em;
     border: 2px solid var(--c-white);
   }
 
@@ -25,10 +30,14 @@ import { projectsData as projects } from "../data/projects";
     justify-content: space-evenly;
   }
 
+  :global(.dark-mode) .tag {
+    border: 1px solid var(--c-white);
+  }
   .tag {
     padding: 4px;
     font-size: 10px;
-    border: 1px solid var(--c-white);
+    border: 1px solid var(--c-black);
+    /* transition: all 0.2s ease-out; */
   }
 
   .links {
@@ -43,23 +52,25 @@ import { projectsData as projects } from "../data/projects";
 
 <Layout title="David Sanderson | Projects">
   <div class="container">
-  {projects.map((el) => (
-      <div class="card">
-        <h2 class="project-title">{el.title}</h2>
-        {el.tags && (
-          <div class="tags">
-            {el.tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
+    {
+      projects.map((el) => (
+        <div class="card">
+          <h2 class="project-title">{el.title}</h2>
+          {el.tags && (
+            <div class="tags">
+              {el.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+
+          {el.description && <p>{el.description}</p>}
+          <div class="links">
+            {el.repo && <a href={el.repo}>View source</a>}
+            {el.url && <a href={el.url}>View live</a>}
           </div>
-        )}
-        
-        {el.description && <p>{el.description}</p>}
-        <div class="links">
-          {el.repo && <a href={el.repo}>View source</a>}
-          {el.url && <a href={el.url}>View live</a>}
         </div>
-      </div>
-    ))}
-     </div>
+      ))
+    }
+  </div>
 </Layout>
